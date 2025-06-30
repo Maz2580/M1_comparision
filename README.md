@@ -10,7 +10,7 @@ The script, in its current PoC state:
 3.  Uses a **simulated** rates database (a Python list of dictionaries called `sample_rates_data`) for property lookups.
 4.  Applies a set of validation rules to each record in the M1 CSV by comparing its `edit_code`, `comments`, and other relevant fields against the corresponding (simulated) rates data.
 5.  Assigns a `validation_status` (e.g., "OK to Submit", "Needs Review: [Reason]", etc.) to each M1 record.
-6.  Outputs a new CSV file (`M1_Shepparton_validated.csv`) containing all original M1 data plus the new `validation_status` column.
+6.  Outputs a new CSV file (`m1_validated.csv`) containing all original M1 data plus the new `validation_status` column.
 
 **This script is a starting point and requires customization to connect to your actual rates database for production use.**
 
@@ -47,7 +47,7 @@ This will:
 
 ## Output
 
-The output CSV file (`M1_Shepparton_validated.csv`) will contain all the columns from the input M1 CSV, plus an additional final column:
+The output CSV file (`m1_validated.csv`) will contain all the columns from the input M1 CSV, plus an additional final column:
 *   `validation_status`: This column provides a text description of the validation outcome for each row based on the script's logic and the (simulated) rates data.
 
 ## Connecting to Your Actual Rates Database (IMPORTANT CUSTOMIZATION)
